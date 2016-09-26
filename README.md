@@ -14,6 +14,12 @@ Tested up to: 4.4
 
 Stable tag: 1.0.0
 
+License: GPLv3 or later
+
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+Based on: IsleMag WordPress theme, Copyright (C) 2015 Themeisle.com
+
 ## Description
 
 A modern and clean free WordPress theme created for the telecomrevealed.com blog. Magazine style, fully responsive, flat, minimalist, SEO friendly, Retina ready, built with Bootstrap, and has social links. Released in 2016, the theme has Google AdSense banners, a magazine homepage template, custom backgrounds, filtered categories, tags, boxed layout, and live customizer.

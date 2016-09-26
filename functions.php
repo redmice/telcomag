@@ -8,11 +8,9 @@ function child_enqueue_styles() {
     wp_dequeue_style( 'islemag-bootstrap' );
 	wp_dequeue_style( 'islemag-style' );
 	wp_dequeue_style( 'islemag-fontawesome' );
-
     wp_enqueue_style( 'telcomag-bootstrap', get_template_directory_uri().'/css/bootstrap.min.css',array(), '3.3.5');
 	wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'telcomag-fontawesome', get_template_directory_uri().'/css/font-awesome.min.css',array(), '4.4.0');
-
     wp_enqueue_style( 'telcomag-style', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ),  wp_get_theme()->get('Version') );
 }
 
@@ -106,4 +104,32 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 
 	return implode( '', $paragraphs );
 }
+
+// Optimization for Feedly
+
+// 1. Feedly namespace
+
+add_filter( 'rss2_ns', 'feedly' );
+function feedly() {
+ echo 'xmlns:webfeeds="http://webfeeds.org/rss/1.0"';
+}
+
+add_filter( 'rss2_head', 'feedly_head' );
+function feedly_head() {
+    // 2. Blog Icon and Cover Image
+    echo '<webfeeds:cover image="http://telecomrevealed.com/wp-content/themes/telcomag/img/telecom_revealed-cover.png" />
+    ';
+    echo '<webfeeds:icon>http://telecomrevealed.com/wp-content/themes/telcomag/img/telecom_revealed_header_logo.png</webfeeds:icon>
+    ';
+    // 3. SVG formatted logo
+    echo '<webfeeds:logo>http://telecomrevealed.com/wp-content/themes/telcomag/img/TelecomRevealed-LogoColor.svg</webfeeds:logo>
+    ';
+    // 4. Feedly links color matching my blog identity colors
+    echo '<webfeeds:accentColor>#399638</webfeeds:accentColor>
+    ';
+    // 5. Add related posts to my feed
+    echo '<webfeeds:related layout=”card” target=”browser”/>
+    ';  
+}
+
 ?>
