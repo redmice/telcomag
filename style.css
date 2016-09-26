@@ -1,0 +1,211 @@
+/*
+ Theme Name:   TelcoMag
+ Description:  A modern and clean free WordPress theme for tech magazines, news and newspaper media websites, personal fashion blogs, or photography, ReviewZine is responsive, flat, minimalist, SEO friendly, Retina ready, built with Bootstrap, and has social links. Released in 2016, the theme has Google AdSense banners, a magazine homepage template, custom backgrounds, filtered categories, tags, boxed layout, and live customizer. ReviewZine is WPML, Photo Gallery Grid,Contact Form 7,WP Product Review, SiteOrigin Page Builder, JetPack compatible, the theme is highly customizable and translation ready.
+ Author:       Themeisle
+ Author URI:   http://themeisle.com
+ Template:     islemag
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         two-columns, right-sidebar, rtl-language-support,sticky-post,theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready
+ Text Domain:  telcomag
+*/
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+body,
+button,
+input,
+select,
+textarea {
+	color: #2b2b2b;
+	font-family: Lato, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 36px 0 12px;
+    font-family: Lato, sans-serif;
+}
+
+p {
+    margin: 0 0 24px;
+}
+
+#footer-inner {
+    padding: 70px 0 20px;
+}
+
+.navbar-top .social-icons {
+    font-size: 18px;
+}
+
+.entry-header {
+
+    background-color: #fff;
+    display: block;
+    font-family: Lato,sans-serif;
+    line-height: 24px;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/*smaller title for recommended entries*/
+.entry-box .entry-title a{
+    font-size: 15px;
+    line-height: 1.5;
+    text-transform: none
+}
+
+.entry-box p{
+    font-size: 12px;
+}
+
+.entry.single .entry-title,
+.entry-title a {
+    font-size: 24px;
+    text-transform: none;
+}
+
+@media screen and (min-width: 768px) {
+    .entry.single .entry-title{
+
+         text-transform: uppercase;
+         font-family: Lato,sans-serif;
+         font-size: 33px;
+         font-style: normal;
+         font-weight: 300;
+         line-height: 36px;
+    }
+}
+
+
+.entry-content {
+    z-index: 10;
+    margin-right: 50px;
+}
+
+/* header content green for mobile */
+
+.header-content {
+    background-color: #399638
+}
+
+@media screen and (min-width: 768px) {
+    .header-content {
+        background-color: #fff
+    }
+
+}
+
+/*Remove main menu from mobile version*/
+
+#navbar {
+    display: none
+}
+
+@media screen and (min-width: 768px) {
+    #navbar {
+        display: block
+}
+}
+
+/* Remove top bar from mobile version */
+
+.navbar-top{
+    display: none
+}
+
+@media screen and (min-width: 768px) {
+    .navbar-top {
+        display: block
+}
+}
+
+.post-embeded-addunit {
+	margin: 1em 0
+}
+
+
+/*Remove padding-left from mobile version to use all available space*/
+.entry.single {
+    padding-left: 0px;
+}
+
+@media screen and (min-width: 768px) {
+    .entry.single {
+        padding-left: 100px;
+    }
+}
+
+/* The mobile version introduce a padding to the left, to avoid overlapping with the date */
+.entry-title {
+    padding-left: 75px;
+}
+
+@media screen and (min-width: 768px) {
+    .entry-title {
+        padding-left: 0px;
+    }
+}
+
+/* Remove blog line */
+.entry::after {
+	content: none
+}
+
+@media screen and (min-width: 768px) {
+    .entry::after {
+	   content: ' '
+    }
+}
+
+/**
+ * 6.1 Post Thumbnail
+ * -----------------------------------------------------------------------------
+ */
+
+.post-thumbnail {
+    display: block;
+    margin: 0;padding-bottom: 0px;
+    padding: 0;
+    position: relative;
+    vertical-align: baseline;
+    z-index: 0;
+}
+
+a.post-thumbnail:hover {
+	background-color: #999;
+}
+
+.post-thumbnail img {
+	height: auto;
+	max-width: 100%;
+    display: block;
+    margin: 0;
+	overflow: hidden;
+    z-index: 0;
+}
+
+
+@media screen and (max-width: 768px) {
+	.post-thumbnail {
+		width: auto;
+		z-index: 2;
+	}
+
+	.post-thumbnail img {
+		float: left;
+		margin: 0 10px 3px 0;
+		width: 84px;
+	}
